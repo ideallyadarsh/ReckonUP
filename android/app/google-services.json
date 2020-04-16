@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "874671033994",
+    "firebase_url": "https://reckonup-9e887.firebaseio.com",
+    "project_id": "reckonup-9e887",
+    "storage_bucket": "reckonup-9e887.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874671033994:android:4ee8d9953f63ea59492773",
+        "android_client_info": {
+          "package_name": "com.ideal.reckonup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874671033994-j91kgmv4394hslgi3emp85ctpjlpnghg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx2bUeKY3h1LREoaDIneRnQVDFgrBllGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "874671033994-j91kgmv4394hslgi3emp85ctpjlpnghg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

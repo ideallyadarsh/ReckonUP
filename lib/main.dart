@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 void main() => runApp(MaterialApp(
   initialRoute: '/main',
   routes: {
@@ -16,6 +17,7 @@ class Main extends StatelessWidget {
         child: RaisedButton(child: Text("   Click here \n to go to next page"),onPressed: (){
           Navigator.pushNamed(context, '/next');
         },
+
         color: Colors.blueAccent,
         ),
       ),
