@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Colors.pinkAccent,
       appBar: AppBar(
-        title: Text('Register'),
+        title: Text('LogIn'),
         backgroundColor: Colors.pink,
         centerTitle: true,
       ),
@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Icon(Icons.account_circle,color: Colors.white,size: 100.0,),
+              Icon(Icons.verified_user,color: Colors.white,size: 100.0,),
               Divider(height: 20,color: Colors.white,thickness: 1.1,),
               Padding(
                 padding: const EdgeInsets.all(20.0),
@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                         }
                       },
                       onSaved: (input)=>_email=input,
-                      decoration: InputDecoration(hintText: 'What\'s your E-mail',
+                      decoration: InputDecoration(hintText: 'Enter your E-mail',
                         hintStyle: TextStyle(
                           color: Colors.white,
                           fontSize: 16.0,
@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                           }
                         },
                         onSaved: (input)=>_password=input,
-                        decoration: InputDecoration(hintText: 'Create a Password',
+                        decoration: InputDecoration(hintText: 'Enter your Password',
                           hintStyle: TextStyle(
                             color: Colors.white,
                             fontSize: 16.0,
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                     fontStyle: FontStyle.italic,
                     letterSpacing: 1.5,
                   ),),
-                onPressed:signIn,
+                onPressed:logIn,
               )
             ],
           ),
@@ -124,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-  Future<void> signIn() async
+  Future<void> logIn() async
   {
     final formState= _formKey.currentState;
     if(formState.validate()){

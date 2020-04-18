@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reckonup/Pages/Setup/signin.dart';
-import 'package:reckonup/Pages/Setup/signup.dart';
+import 'package:reckonup/Pages/Setup/login.dart';
+import 'package:reckonup/Pages/Setup/register.dart';
 
 class WelcomePage extends StatefulWidget {
   @override

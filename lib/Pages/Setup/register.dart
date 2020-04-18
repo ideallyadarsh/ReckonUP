@@ -2,7 +2,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:reckonup/Pages/Setup/signin.dart';
+import 'package:reckonup/Pages/Setup/login.dart';
 class SignUp extends StatefulWidget {
   @override
   _SignUpState createState() => _SignUpState();
@@ -117,7 +117,7 @@ class _SignUpState extends State<SignUp> {
                   fontStyle: FontStyle.italic,
                   letterSpacing: 1.5,
                 ),),
-                onPressed:signUp,
+                onPressed:register,
               )
             ],
           ),
@@ -125,7 +125,7 @@ class _SignUpState extends State<SignUp> {
       ),
     );
   }
-  Future<void> signUp() async
+  Future<void> register() async
   {
     final formState= _formKey.currentState;
     if(formState.validate()){
