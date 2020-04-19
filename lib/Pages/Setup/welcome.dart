@@ -10,52 +10,65 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-      backgroundColor: Colors.pinkAccent,
-      body: Column(
-        //crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-             Text("Hello!\n\n"
-                "Welcome to ReckonUp",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 25.0,
-                     ),
-                textAlign: TextAlign.center,
-             ),
-          Text("\nNow Manage your expenses with ease😊",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18.0,
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          stops: [0.4,1],
+          colors: [
+                Colors.pinkAccent,
+            Colors.white,
+          ],
+        ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Column(
+          //crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+               Text("Hello!\n\n"
+                  "Welcome to ReckonUp",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 25.0,
+                       ),
+                  textAlign: TextAlign.center,
+               ),
+            Text("\nNow Manage your expenses with ease😊",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18.0,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-          ),
 
 
-          SizedBox(height: 80.0,),
-          Center(
-            child: RaisedButton(
-              child: Text("Register",
-              style:TextStyle(
-                fontSize: 20.0,
+            SizedBox(height: 80.0,),
+            Center(
+              child: RaisedButton(
+                child: Text("Register",
+                style:TextStyle(
+                  fontSize: 20.0,
+                  letterSpacing: 1.5,
+                ),
+                ),
+                onPressed:navigateToSignUp,
+              ),
+            ),
+            SizedBox(height: 10.0,),
+            FlatButton(
+             // color: Colors.lightBlue,
+              child: Text("ALREADY HAVE AN ACCOUNT? SIGNIN",
+              style: TextStyle(
+                color: Colors.white,
                 letterSpacing: 1.5,
-              ),
-              ),
-              onPressed:navigateToSignUp,
-            ),
-          ),
-          SizedBox(height: 10.0,),
-          FlatButton(
-            child: Text("ALREADY HAVE AN ACCOUNT?",
-            style: TextStyle(
-              color: Colors.white,
-              letterSpacing: 1.5,
-            ),),
-            onPressed:navigateToSignIn,
-          )
-        ],
+              ),),
+              onPressed:navigateToSignIn,
+            )
+          ],
+        ),
       ),
     );
   }

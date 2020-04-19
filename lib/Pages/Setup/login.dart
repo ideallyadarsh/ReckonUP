@@ -12,64 +12,40 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey =GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.pinkAccent,
-      appBar: AppBar(
-        title: Text('LogIn'),
-        backgroundColor: Colors.pink,
-        centerTitle: true,
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          stops: [0.4,1],
+          colors: [
+            Colors.pinkAccent,
+            Colors.white,
+          ],
+        ),
       ),
-      body: Form(
-        key: _formKey,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(5, 40.0, 5, 0),
-          child: Column(
-            //mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Icon(Icons.verified_user,color: Colors.white,size: 100.0,),
-              Divider(height: 20,color: Colors.white,thickness: 1.1,),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text("E-Mail",
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 22.0,
-                      ),
-                    ),
-                    TextFormField(
-                      validator: (input) {
-                        if(input.isEmpty)
-                        {
-                          return 'Please enter your email';
-                        }
-                      },
-                      onSaved: (input)=>_email=input,
-                      decoration: InputDecoration(hintText: 'Enter your E-mail',
-                        hintStyle: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                        ),
-                        border: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-                      ),
-                    ),
-                  ],
-
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: Text('LogIn'),
+          backgroundColor: Colors.pink,
+          centerTitle: true,
+        ),
+        body: Form(
+          key: _formKey,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(5, 40.0, 5, 0),
+            child: Column(
+              //mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(Icons.verified_user,color: Colors.white,size: 80.0,),
+                Divider(height: 20,color: Colors.white,thickness: 1.1,),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children : <Widget>[
-                      Text("Password",
+                    children: <Widget>[
+                      Text("E-Mail",
                         style: TextStyle(
                           color: Colors.white70,
                           fontSize: 22.0,
@@ -77,48 +53,84 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       TextFormField(
                         validator: (input) {
-                          if(input.length<8)
+                          if(input.isEmpty)
                           {
-                            return "Password must be 8 character long";
+                            return 'Please enter your email';
+
                           }
                         },
-                        onSaved: (input)=>_password=input,
-                        decoration: InputDecoration(hintText: 'Enter your Password',
+                        onSaved: (input)=>_email=input,
+                        decoration: InputDecoration(hintText: 'Enter your E-mail',
+                          errorStyle: TextStyle(color: Colors.white,),
                           hintStyle: TextStyle(
                             color: Colors.white,
-                            fontSize: 16.0,
+                            fontSize: 18.0,
                           ),
-
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
                           enabledBorder: InputBorder.none,
                           errorBorder: InputBorder.none,
                           disabledBorder: InputBorder.none,
                         ),
-                        obscureText: true,
                       ),
+                    ],
 
-                    ]
+                  ),
                 ),
-              ),
-              Divider(height: 20,color: Colors.white,thickness: 1.1,),
-              RaisedButton(
-                color: Colors.transparent,
-                elevation: 1.0,
-                shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(15.0),
-                    side: BorderSide(color: Colors.white)
+
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children : <Widget>[
+                        Text("Password",
+                          style: TextStyle(
+                            color: Colors.white70,
+                            fontSize: 22.0,
+                          ),
+                        ),
+                        TextFormField(
+                          validator: (input) {
+                            if(input.length<8)
+                            {
+                              return "Password must be 8 character long";
+                            }
+                          },
+                          onSaved: (input)=>_password=input,
+                          decoration: InputDecoration(hintText: 'Enter your Password',
+                            errorStyle: TextStyle(color: Colors.white,),
+                            hintStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                            ),
+
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                          ),
+                          obscureText: true,
+                        ),
+
+                      ]
+                  ),
                 ),
-                child: Text("LogIn",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22.0,
-                    fontStyle: FontStyle.italic,
-                    letterSpacing: 1.5,
-                  ),),
-                onPressed:logIn,
-              )
-            ],
+                Divider(height: 20,color: Colors.white,thickness: 1.1,),
+                RaisedButton(
+                  color: Colors.white,
+                  elevation: 1.0,
+                  child: Text("LogIn",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22.0,
+                      fontStyle: FontStyle.italic,
+                      letterSpacing: 1.5,
+                    ),),
+                  onPressed:logIn,
+                )
+              ],
+            ),
           ),
         ),
       ),
