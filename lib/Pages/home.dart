@@ -59,7 +59,9 @@ class _HomeState extends State<Home> {
              {
                _showAlert(context);
              }
-           _page = index;
+           else  {
+          _page = index;
+           }
          });
         },
       ),
@@ -67,29 +69,34 @@ class _HomeState extends State<Home> {
       body: _pages[_page],
     );
   }
+  void _showAlert(BuildContext context)  {
+    showDialog(
+        context: context,
+        builder: (context) => CupertinoAlertDialog(
+          title: Text("Exit?") ,
+          content: Text("Do You want to exit the App?"),
+          actions: <Widget>[
+            FlatButton(child:Text("Yes"),
+              onPressed: (){
+                SystemNavigator.pop();
+              },
+            ),
+            FlatButton(child:Text("No"),
+              onPressed: (){
+                setState(() {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home()));
+                });
+              },
+            )
+          ],
+        )
+    );
+  }
 }
 
 
 
-void _showAlert(BuildContext context)  {
-  showDialog(
-      context: context,
-      builder: (context) => CupertinoAlertDialog(
-        title: Text("Exit?") ,
-        content: Text("Do You want to exit the App?"),
-        actions: <Widget>[
-          FlatButton(child:Text("Yes"),
-            onPressed: (){
-              SystemNavigator.pop();
-            },
-          ),
-          FlatButton(child:Text("No"),
-            onPressed: (){},
-          )
-        ],
-      )
-  );
-}
+
 
 
 //StreamBuilder(
