@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
               //mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(Icons.verified_user,color: Colors.white,size: 80.0,),
-                Divider(height: 20,color: Colors.white,thickness: 1.1,),
+                SizedBox(height: 20.0,),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
@@ -52,6 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       TextFormField(
+                        //cursorColor: Colors.white,
                         validator: (input) {
                           if(input.isEmpty)
                           {
@@ -66,6 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.white,
                             fontSize: 18.0,
                           ),
+
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
                           enabledBorder: InputBorder.none,
@@ -90,6 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         TextFormField(
+                          cursorColor: Colors.white,
                           validator: (input) {
                             if(input.length<8)
                             {
@@ -116,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                       ]
                   ),
                 ),
-                Divider(height: 20,color: Colors.white,thickness: 1.1,),
+                SizedBox(height: 20,),
                 RaisedButton(
                   color: Colors.white,
                   elevation: 1.0,
