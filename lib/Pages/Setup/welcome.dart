@@ -23,6 +23,8 @@ class _WelcomePageState extends State<WelcomePage> {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home(user : user)));
         // send the user to the home page
         // homePage();
+      }else{
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>LoginPage(),fullscreenDialog: true));
       }
     });
   }
