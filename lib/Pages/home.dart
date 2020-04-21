@@ -8,8 +8,8 @@ class Home extends StatelessWidget {
   final FirebaseUser user;
   Widget _buildList(BuildContext context, DocumentSnapshot document) {
     return ListTile(
-      title: Text(document['Age']),
-      subtitle: Text(document['Name']),
+      title: Text(document['Age'].toString()),
+      subtitle: Text(document['Name'].toString()),
     );
   }
 
@@ -28,7 +28,7 @@ class Home extends StatelessWidget {
     }
     return ListView.builder(
       itemExtent: 80.0,
-      itemCount: 2,
+      itemCount: snapshot.data.documents.length,
       itemBuilder: (context, index) {
         return _buildList(context, snapshot.data.documents[index]);
       },
