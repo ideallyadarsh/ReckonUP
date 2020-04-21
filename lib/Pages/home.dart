@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
         items: <Widget>[
           Icon(Icons.account_circle,size:20 ,semanticLabel: 'Account',),
           Icon(Icons.edit,size: 20,semanticLabel: 'Edit',),
-          Icon(Icons.add,size: 20,semanticLabel: 'Add item',),
+          Icon(Icons.home,size: 20,semanticLabel: 'Add item',),
           Icon(Icons.account_balance_wallet,size: 20,semanticLabel: 'Balance',),
           Icon(Icons.exit_to_app,size: 20,semanticLabel: 'Exit',),
         ],

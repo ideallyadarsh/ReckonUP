@@ -35,11 +35,11 @@ class _SignUpState extends State<SignUp> {
         body: Form(
           key: _formKey,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(5, 40.0, 5, 0),
+            padding: const EdgeInsets.fromLTRB(5, 20.0, 5, 0),
             child: Column(
                 //mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Icon(Icons.account_circle,color: Colors.white,size: 80.0,),
+                Icon(Icons.account_circle,color: Colors.white,size: 70.0,),
               SizedBox(height: 20),
                      Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -60,7 +60,7 @@ class _SignUpState extends State<SignUp> {
                               }
                             },
                             onSaved: (input)=>_email=input,
-                            decoration: InputDecoration(hintText: 'What\'s your E-mail',
+                            decoration: InputDecoration(hintText: 'Your E-mail',
                               errorStyle: TextStyle(color: Colors.white,),
                               hintStyle: TextStyle(
                                 color: Colors.white,
