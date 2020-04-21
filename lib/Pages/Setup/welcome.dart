@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:reckonup/Pages/Setup/login.dart';
 import 'package:reckonup/Pages/Setup/register.dart';
+import 'package:reckonup/Pages/home.dart';
 
 class WelcomePage extends StatefulWidget {
   @override
@@ -8,6 +10,22 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  Future<FirebaseUser> getUser() async{
+    return await _auth.currentUser();
+  }
+  @override
+  void initState() {
+    super.initState();
+    getUser().then((user) {
+      if (user != null) {
+
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home(user : user)));
+        // send the user to the home page
+        // homePage();
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Container(

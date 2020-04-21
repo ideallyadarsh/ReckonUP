@@ -40,7 +40,7 @@ class _SignUpState extends State<SignUp> {
                 //mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(Icons.account_circle,color: Colors.white,size: 80.0,),
-              Divider(height: 20,color: Colors.white,thickness: 1.1,),
+              SizedBox(height: 20),
                      Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
@@ -116,7 +116,7 @@ class _SignUpState extends State<SignUp> {
                         ]
                       ),
                     ),
-                Divider(height: 20,color: Colors.white,thickness: 1.1,),
+                SizedBox(height: 20,),
                 RaisedButton(
                  color: Colors.white,
                   elevation: 1.0,
